@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Happy Valentines</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    </head>
+
+    <body class="preload">
+        <img id="rocket" src="ElRocket.png">
+        <div class="stage">
+
+                <div class="card front">
+                    <h2 id="front-text">All the way to the stars</h2>
+
+                    <h2 id="front-of-back-text">And all the way back</h2>
+
+                    <img id="earth" src="ElWorld.png">
+                </div>
+
+                <div class="card back">
+                    <p class="inside-text" id="to">To Ellie,</p>
+
+                    <p class="inside-text" id="sentiment">Happy Valentine's Day, I wish could be there with you ❤️</p>
+
+                    <p class="inside-text" id="lol">Lots of Love, your Stinky Ass xx</p>
+                </div>
+
+        </div>
+
+        <script>
+            const card_front = document.querySelector("div.card.front");
+            const card_back = document.querySelector("div.card.back");
+            const rocket = document.querySelector("img#rocket");
+            const earth = document.querySelector("img#earth");
+            const aatwb_text = document.querySelector("h2#front-of-back-text");
+            const atwtts_text = document.querySelector("h2#front-text");
+
+            // Hide animations on load
+            setTimeout(function(){
+                document.body.className="";
+            },1000);
+
+
+            // STARS
+            function random_position(min=1, max=100) {
+                return Math.floor(Math.random() * (max-min)) + min;
+            }
+
+            const sizes = [1,1,2,3,4];
+            for(let i = 0; i < 210; i++) {
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+
+                const new_star = document.createElement("div");
+                new_star.style.top = random_position(1, card_front.offsetHeight) + 'px';
+                new_star.style.left = random_position(1, card_front.offsetWidth) + 'px';
+                new_star.style.height = size + 'px';
+                new_star.style.width = new_star.style.height;
+                new_star.classList.add('star');
+
+                if (i <= 35) {
+                    new_star.classList.add('type1');
+                } else if(i <= 70) {
+                    new_star.classList.add('type2');
+                } else if(i <= 105) {
+                    new_star.classList.add('type3');
+                } else if(i <= 140) {
+                    new_star.classList.add('type4');
+                } else if(i <= 175) {
+                    new_star.classList.add('type5');
+                } else if(i <= 210) {
+                    new_star.classList.add('type6');
+                }
+
+                card_front.appendChild(new_star);
+            }
+
+            // OPEN CARD
+            const stars = document.querySelectorAll("div.star");
+
+            card_front.addEventListener("click", () => {
+                card_front.classList.toggle('open');
+                card_back.classList.toggle('open');
+                stars.forEach(star => {
+                    star.classList.toggle('open');
+                });
+                rocket.classList.toggle('launched');
+                earth.classList.toggle('open');
+                aatwb_text.classList.toggle('open');
+                atwtts_text.classList.toggle('open');
+            });
+        </script>
+    </body>
+</html>
