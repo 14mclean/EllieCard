@@ -19,7 +19,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: hidden;
     position: absolute;
     top: 0;
     left: 0;
