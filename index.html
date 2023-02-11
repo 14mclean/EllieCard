@@ -9,24 +9,25 @@
     </head>
 
     <body class="preload">
-        <img id="rocket" src="ElRocket.png">
+        
         <div class="stage">
+            <img id="rocket" src="ElRocket.png">
 
-                <div class="card front">
-                    <h2 id="front-text">All the way to the stars</h2>
+            <div class="card front">
+                <h2 id="front-text">All the way to the stars</h2>
 
-                    <h2 id="front-of-back-text">And all the way back</h2>
+                <h2 id="front-of-back-text">And all the way back</h2>
 
-                    <img id="earth" src="ElWorld.png">
-                </div>
+                <img id="earth" src="ElWorld.png">
+            </div>
 
-                <div class="card back">
-                    <p class="inside-text" id="to">To Ellie,</p>
+            <div class="card back">
+                <p class="inside-text" id="to">To Ellie,</p>
 
-                    <p class="inside-text" id="sentiment">Happy Valentine's Day, I wish could be there with you ❤️</p>
+                <p class="inside-text" id="sentiment">Happy Valentine's Day, I wish we could celebrate it together ❤️</p>
 
-                    <p class="inside-text" id="lol">Lots of Love, your Stinky Ass xx</p>
-                </div>
+                <p class="inside-text" id="lol">Lots of Love, your Stinky Ass xx</p>
+            </div>
 
         </div>
 
@@ -50,7 +51,7 @@
             }
 
             const sizes = [1,1,2,3,4];
-            for(let i = 0; i < 210; i++) {
+            for(let i = 0; i < 210; i++) { /* FIX */
                 const size = sizes[Math.floor(Math.random() * sizes.length)];
 
                 const new_star = document.createElement("div");
