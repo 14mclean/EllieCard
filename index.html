@@ -52,7 +52,7 @@
             }
 
             const sizes = [1,1,2,3,4];
-            for(let i = 0; i < 210; i++) { /* FIX */
+            for(let i = 0; i < card_front.offsetWidth; i++) {
                 const size = sizes[Math.floor(Math.random() * sizes.length)];
 
                 const new_star = document.createElement("div");
