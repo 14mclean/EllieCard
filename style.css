@@ -19,7 +19,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -33,25 +33,27 @@ body.preload *:not(.star) {
 }
 
 div.stage {
-    width: 300px;
-    height: 300px;
+    width: 100vw;
+    height: 100vh;
     perspective: 1600px;
     -webkit-perspective: 1600px;
     perspective-origin: 50% -500px;
     -webkit-perspective-origin: 50% -500px;
     position: absolute;
-    left: calc(50vw - 150px);
-    top: calc(50vh - 150px);
+    left: 0;
+    top: 0;
 }
 
 div.card {
     display: block;
     position: absolute;
-    width: 250px;
-    height: 300px;
+    width: 30vw;
+    height: 36vw;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transform-origin: left;
+    left: calc(50vw - 15vw);
+    top: calc(50vh - 18vw);
 }
 
 /*** FRONT & CONTENTS ***/
@@ -90,14 +92,14 @@ div.front {
             background: rgb(5, 5, 5);}
     }
 
-h2#front-text {
+h2#front-text { /* FIX */
     color: #fff;
     position: absolute;
-    left: 10px;
-    width: 50%;
+    left: 10px; /* FIX */
+    width: 50%; /* FIX */
     font-family: 'Roboto';
     background: rgb(5, 5, 5);
-    padding: 5px;
+    padding: 5px; /* FIX */
     opacity: 1;
     border-radius: 15px;
     z-index: 1;
@@ -110,12 +112,12 @@ h2#front-text {
         visibility: hidden;
     }
 
-h2#front-of-back-text {
+h2#front-of-back-text { /* FIX */
     color: #fff;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    width: 60%;
+    right: 10px; /* FIX */
+    bottom: 10px; /* FIX */
+    width: 60%; /* FIX */
     font-family: 'Roboto';
     transform: rotateY(180deg);
     visibility: hidden;
@@ -128,7 +130,7 @@ h2#front-of-back-text {
     }
 
 img#earth {
-    width: 100px;
+    width: 100px; /* FIX */
     position: absolute;
     top: 15px;
     right: 15px;
@@ -247,11 +249,11 @@ div.back {
     }
 
     p.inside-text#sentiment {
-        top: 30%;
-        width: calc(100% - 20px);
+        top: 30%; /* FIX */
+        width: calc(100% - 20px); /* FIX */
         text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 10px; /* FIX */
+        padding-right: 10px; /* FIX */
         height: fit-content;
     }
 
@@ -265,19 +267,19 @@ div.back {
 /*** OTHER ***/
 img#rocket {
     position: absolute;
-    width: 55px;
-    z-index: 1;
-    left: calc(calc(50vw - 150px) + 170px);
-    top: calc(calc(50vh - 150px) + 200px);
+    width: 55px; /* FIX */
+    z-index: 2;
+    left: calc(calc(50vw - 150px) + 170px); /* FIX */
+    top: calc(calc(50vh - 150px) + 200px); /* FIX */
     transform: rotate(-25deg);
 }
 
     img#rocket.launched {
         animation: 2s ease-in-out 0s 1 alternate rocket-launch;
-        transform: translate(-130px, -20px) rotate(-25deg);
+        transform: translate(-130px, -20px) rotate(-25deg); /* FIX */
     }
 
-    @keyframes rocket-launch {
+    @keyframes rocket-launch { /* FIX */
         0% {transform: rotate(-25deg);}
         48% {transform: translate(-350px, -1000px) rotate(-25deg);}
         49% {visibility: hidden;}
